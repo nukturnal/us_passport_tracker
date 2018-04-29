@@ -16,8 +16,8 @@ us_passport_tracker C829293 CN
 
 Just call [us_passport_tracker] without arguments for interactive mode".freeze
 
-CREDITS = "v#{USPassportTracker::VERSION} codename IndianaJones
-Brought to you by Alfred Rowe".freeze
+CREDITS = "v#{USPassportTracker::VERSION} codename #{USPassportTracker::CODENAME}
+Maintained and brought to you by Alfred Rowe".freeze
 REPO_URL = 'https://github.com/nukturnal/us_passport_tracker'.freeze
 
 @pastel = Pastel.new
