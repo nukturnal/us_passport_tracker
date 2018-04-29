@@ -1,32 +1,67 @@
 #!/usr/bin/env ruby
 
 require 'us_passport_tracker'
+require 'tty-prompt'
+require 'tty-spinner'
+require 'tty-font'
+require 'pastel'
 
-USAGE = "Usage: us_passport_tracker PassportNumber ISOCountryCode
+USAGE = "USAGE: us_passport_tracker PassportNumber ISOCountryCode
 
 Examples (Ghana, Nigeria, China Respectively)
 ---------------------------------------------
 us_passport_tracker G167290 GH
 us_passport_tracker N982922 NG
-us_passport_tracker C829293 CN".freeze
+us_passport_tracker C829293 CN
 
-def printout(info = USAGE)
-  puts(info)
+Just call [us_passport_tracker] without arguments for interactive mode".freeze
+
+CREDITS = "v#{USPassportTracker::VERSION} codename IndianaJones
+Brought to you by Alfred Rowe".freeze
+REPO_URL = 'https://github.com/nukturnal/us_passport_tracker'.freeze
+
+@pastel = Pastel.new
+@font = TTY::Font.new(:straight)
+
+def bold_text(str)
+  @pastel.bold(str)
 end
 
-def warn_and_exit(info = USAGE)
-  warn(info)
-  exit(2)
+def line_separator
+  puts '-'
 end
 
-def get_results(passport_number, country_code = 'GH')
-  return warn_and_exit unless passport_number && country_code
-  tracker = USPassportTracker::Track.new(passport_number, country_code)
-  tracker.status
-  printout("Country Name: #{tracker.country_name}")
-  printout("Passport Number: #{tracker.passport_number}")
-  printout("Current Status: #{tracker.response_text}")
-  exit(0)
+def credits
+  puts bold_text(@pastel.bright_magenta(@font.write('PASSPORT  TRACKER')))
+  puts @pastel.cyan(CREDITS)
+  puts bold_text(@pastel.blue(REPO_URL))
+  line_separator
 end
 
-get_results(ARGV[0], ARGV[1])
+if ARGV.size == 1 && ARGV[0] == 'help'
+  credits
+  puts USAGE
+  return
+end
+
+prompt = TTY::Prompt.new
+spinner = TTY::Spinner.new(@pastel.yellow(':spinner Checking Status...'),
+                           format: :dots)
+
+if ARGV.size >= 2
+  tracker = USPassportTracker::Track.new(ARGV[0], ARGV[1])
+else
+  credits
+  passport_number = prompt.ask('Passport ID Number:', required: true)
+  country_code = prompt.ask('US Embassy Country:', default: 'GH')
+  take_screenshot = prompt.yes?('Take Screenshot of Result?:', default: 'N')
+  tracker = USPassportTracker::Track.new(passport_number,
+                                         country_code, take_screenshot)
+end
+
+spinner.auto_spin
+tracker.status
+spinner.stop(@pastel.green('Done!'))
+line_separator
+puts(bold_text("Country Name: #{@pastel.green(tracker.country_name)}"))
+puts(bold_text("Status: #{@pastel.green(tracker.response_text)}"))

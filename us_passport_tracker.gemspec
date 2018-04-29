@@ -34,4 +34,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
   spec.add_development_dependency 'selenium-webdriver', '~> 3.10'
+  spec.add_development_dependency 'tty-prompt', '~> 0.16'
+  spec.add_development_dependency 'tty-spinner', '~> 0.8'
+  spec.add_development_dependency 'tty-font', '~> 0.2'
 end

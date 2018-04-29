@@ -2,6 +2,7 @@
 
 This is a simple CommandLine tool to check the status of your VISA & Passport collection after its been approved by the US Embassy/Consulate.
 
+![alt text](us_passport_tracker_commandline.gif)
 
 ## Installation
 

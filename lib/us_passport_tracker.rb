@@ -63,7 +63,7 @@ module USPassportTracker
     end
 
     def take_screenshot
-      @driver.save_screenshot @screenshot_filename
+      @driver.save_screenshot "#{@screenshot_filename}.png"
     end
   end
 end
