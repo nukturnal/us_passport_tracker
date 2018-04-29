@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    us_passport_tracker (0.1.0)
+    us_passport_tracker (1.0.0)
 
 GEM
   remote: https://rubygems.org/
