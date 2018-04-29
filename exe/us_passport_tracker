@@ -1,0 +1,32 @@
+#!/usr/bin/env ruby
+
+require 'us_passport_tracker'
+
+USAGE = "Usage: us_passport_tracker PassportNumber ISOCountryCode
+
+Examples (Ghana, Nigeria, China Respectively)
+---------------------------------------------
+us_passport_tracker G167290 GH
+us_passport_tracker N982922 NG
+us_passport_tracker C829293 CN".freeze
+
+def printout(info = USAGE)
+  puts(info)
+end
+
+def warn_and_exit(info = USAGE)
+  warn(info)
+  exit(2)
+end
+
+def get_results(passport_number, country_code = 'GH')
+  return warn_and_exit unless passport_number && country_code
+  tracker = USPassportTracker::Track.new(passport_number, country_code)
+  tracker.status
+  printout("Country Name: #{tracker.country_name}")
+  printout("Passport Number: #{tracker.passport_number}")
+  printout("Current Status: #{tracker.response_text}")
+  exit(0)
+end
+
+get_results(ARGV[0], ARGV[1])
