@@ -40,6 +40,13 @@ us_passport_tracker G167290 GH
 us_passport_tracker N167290 NG
 ```
 
+## Interactive Mode
+You may enter a mode advanced mode by simply typing `us_passport_tracker` without any arguments
+
+```
+us_passport_tracker
+```
+
 ## Application Usage
 
 You can include this in your codebase by simply calling the method below
