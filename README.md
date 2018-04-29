@@ -1,6 +1,6 @@
 # USA VISA & Passport Tracker
 
-This is a simple CommandLine tool to check the status of your VISA & Passport collection after its been approved by the US Embassy/Consulate.
+This is a simple CommandLine tool to check the status of your VISA & Passport collection after its been approved by the US Embassy/Consulate. This tool should work for all countries that have a USA Embassy/Consulate, remember to use the **ISO Alpha-2** Country Codes
 
 ![alt text](us_passport_tracker_commandline.gif)
 
@@ -23,7 +23,6 @@ Or install it yourself as:
 ## Commandline Usage
 
 Installing this gem gives you a nice commandline tool `us_passport_tracker` which you can use to quickly get your VISA status and continue with whatever you were doing.
-This tool should work for all countries with a US Embassy/Consulate. Remember to use the full Country Name
 
 ```
 us_passport_tracker PassportNumber ISOCountryCode
