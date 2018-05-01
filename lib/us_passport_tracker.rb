@@ -49,6 +49,11 @@ module USPassportTracker
       @response_text
     end
 
+    def ready_for_pickup?
+      return false if @response_text.nil?
+      @response_text.include? 'ready'
+    end
+
     private
 
     def uri_country_name

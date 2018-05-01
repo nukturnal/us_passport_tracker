@@ -22,28 +22,28 @@ Or install it yourself as:
 
 ## Commandline Usage
 
-Installing this gem gives you a nice commandline tool `us_passport_tracker` which you can use to quickly get your VISA status and continue with whatever you were doing.
+Installing this gem gives you a nice commandline tool `uspasstracker` which you can use to quickly get your VISA status and continue with whatever you were doing.
 
 ```
-us_passport_tracker PassportNumber ISOCountryCode
+uspasstracker PassportNumber ISOCountryCode
 ```
 
 **Example (Status check via Ghana Embassy)**
 ```
-us_passport_tracker G167290 GH
+uspasstracker G167290 GH
 ```
 
 **Example (Status check via Nigeria Embassy)**
 
 ```
-us_passport_tracker N167290 NG
+uspasstracker N167290 NG
 ```
 
 ## Interactive Mode
-You may enter a mode advanced mode by simply typing `us_passport_tracker` without any arguments
+You may enter a mode advanced mode by simply typing `uspasstracker` without any arguments
 
 ```
-us_passport_tracker
+uspasstracker
 ```
 
 ## Application Usage

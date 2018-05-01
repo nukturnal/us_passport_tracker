@@ -6,15 +6,15 @@ require 'tty-spinner'
 require 'tty-font'
 require 'pastel'
 
-USAGE = "USAGE: us_passport_tracker PassportNumber ISOCountryCode
+USAGE = "USAGE: uspasstracker PassportNumber ISOCountryCode
 
 Examples (Ghana, Nigeria, China Respectively)
 ---------------------------------------------
-us_passport_tracker G167290 GH
-us_passport_tracker N982922 NG
-us_passport_tracker C829293 CN
+uspasstracker G167290 GH
+uspasstracker N982922 NG
+uspasstracker C829293 CN
 
-Just call [us_passport_tracker] without arguments for interactive mode".freeze
+Just call [uspasstracker] without arguments for interactive mode".freeze
 
 CREDITS = "v#{USPassportTracker::VERSION} codename #{USPassportTracker::CODENAME}
 Maintained and brought to you by Alfred Rowe".freeze
@@ -36,6 +36,14 @@ def credits
   puts @pastel.cyan(CREDITS)
   puts bold_text(@pastel.blue(REPO_URL))
   line_separator
+end
+
+def status(tracker)
+  if tracker.ready_for_pickup?
+    @pastel.green(tracker.response_text)
+  else
+    @pastel.red(tracker.response_text)
+  end
 end
 
 if ARGV.size == 1 && ARGV[0] == 'help'
@@ -64,4 +72,4 @@ tracker.status
 spinner.stop(@pastel.green('Done!'))
 line_separator
 puts(bold_text("Country Name: #{@pastel.green(tracker.country_name)}"))
-puts(bold_text("Status: #{@pastel.green(tracker.response_text)}"))
+puts(bold_text("Status: #{status(tracker)}"))
