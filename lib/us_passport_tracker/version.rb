@@ -1,4 +1,4 @@
 module USPassportTracker
-  VERSION = '1.1.2'.freeze
+  VERSION = '1.2.1'.freeze
   CODENAME = 'IndianaJones'.freeze
 end
