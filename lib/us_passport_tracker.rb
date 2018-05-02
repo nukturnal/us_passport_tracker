@@ -23,15 +23,11 @@ module USPassportTracker
 
     def initialize(passport_number,
                    country_code = 'GH',
-                   screenshot_enabled = false,
-                   screenshot_filename = 'PassportTrackerScreenshot')
+                   screenshot_enabled = false)
 
       @passport_number = passport_number
       @country_code = country_code.downcase
-      @country_name = nil
-      @response_text = nil
       @screenshot_enabled = screenshot_enabled
-      @screenshot_filename = screenshot_filename
 
       @driver = Selenium::WebDriver.for(:chrome, options: CHROME_OPTIONS)
       @root_url = "http://www.ustraveldocs.com/#{@country_code}/index.html?firstTime=No"
@@ -68,7 +64,8 @@ module USPassportTracker
     end
 
     def take_screenshot
-      @driver.save_screenshot "#{@screenshot_filename}.png"
+      @screenshot_filename = 'PassportTrackerScreenshot.png'
+      @driver.save_screenshot @screenshot_filename
     end
   end
 end

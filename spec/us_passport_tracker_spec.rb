@@ -14,12 +14,24 @@ RSpec.describe USPassportTracker do
       end
     end
 
-    context 'with a valid USA Embassy country code' do
+    context 'with a valid USA Embassy country code with screenshot disabled' do
       it 'should return a "ready for pickup" or "still with the US" status' do
         track = @track.dup.new(@valid_passport, @valid_country_code)
         track.status
         expect(track.country_name).not_to be nil
         expect(track.response_text).not_to be nil
+        expect(track.screenshot_filename).to be nil
+        valid_response = track.response_text.include?('ready for pickup') ||
+                         track.response_text.include?('still with the US')
+        expect(valid_response).to be true
+      end
+
+      it 'with a valid USA Embassy country code with screenshot enabled' do
+        track = @track.dup.new(@valid_passport, @valid_country_code, true)
+        track.status
+        expect(track.country_name).not_to be nil
+        expect(track.response_text).not_to be nil
+        expect(track.screenshot_filename).not_to be nil
         valid_response = track.response_text.include?('ready for pickup') ||
                          track.response_text.include?('still with the US')
         expect(valid_response).to be true
