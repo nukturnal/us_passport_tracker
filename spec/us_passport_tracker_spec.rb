@@ -10,6 +10,7 @@ RSpec.describe USPassportTracker do
         track.status
         expect(track.country_name).not_to be nil
         expect(track.response_text).not_to be nil
+        expect(track.ready_for_pickup?).to be false
         expect(track.response_text).to include('no status update')
       end
     end
@@ -21,20 +22,14 @@ RSpec.describe USPassportTracker do
         expect(track.country_name).not_to be nil
         expect(track.response_text).not_to be nil
         expect(track.screenshot_filename).to be nil
-        valid_response = track.response_text.include?('ready for pickup') ||
-                         track.response_text.include?('still with the US')
-        expect(valid_response).to be true
+        expect(track.ready_for_pickup?).to be(true) | be(false)
+        expect(track.response_text).to include('ready for pickup') | include('still with the US')
       end
 
       it 'with a valid USA Embassy country code with screenshot enabled' do
         track = @track.dup.new(@valid_passport, @valid_country_code, true)
         track.status
-        expect(track.country_name).not_to be nil
-        expect(track.response_text).not_to be nil
         expect(track.screenshot_filename).not_to be nil
-        valid_response = track.response_text.include?('ready for pickup') ||
-                         track.response_text.include?('still with the US')
-        expect(valid_response).to be true
       end
     end
   end
@@ -46,6 +41,7 @@ RSpec.describe USPassportTracker do
         track.status
         expect(track.country_name).not_to be nil
         expect(track.response_text).not_to be nil
+        expect(track.ready_for_pickup?).to be false
         expect(track.response_text).to include('no status update')
       end
     end
@@ -56,6 +52,7 @@ RSpec.describe USPassportTracker do
         track.status
         expect(track.country_name).not_to be nil
         expect(track.response_text).not_to be nil
+        expect(track.ready_for_pickup?).to be false
         expect(track.response_text).to include('no status update')
       end
     end
