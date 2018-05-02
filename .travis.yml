@@ -15,6 +15,10 @@ rvm:
   - 2.3.0
   - 2.2.0
   - 2.1
-before_install: gem install bundler --pre
+
+addons:
+  chrome: stable
+before_install:
+  - gem install bundler --pre
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT

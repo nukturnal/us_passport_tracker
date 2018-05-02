@@ -10,7 +10,7 @@ module USPassportTracker
     TRACKER_URL = 'http://cgifederal.force.com/passporttracker'.freeze
     PASSPORT_INPUT = 'passportTrackerPage:psptTrackerForm:j_id34:j_id35:passportNo'.freeze
     ACTION_BUTTON = 'passportTrackerPage:psptTrackerForm:trackButton'.freeze
-    OPTIONS = %w[headless window-size=250,150].freeze
+    OPTIONS = %w[headless window-size=250,150 no-sandbox disable-gpu].freeze
     CHROME_OPTIONS = Selenium::WebDriver::Chrome::Options.new(args: OPTIONS)
 
     attr_accessor :country_code,
