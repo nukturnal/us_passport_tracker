@@ -1,6 +1,10 @@
 require 'bundler/setup'
 require 'simplecov'
+require 'simplecov-console'
+
+SimpleCov.formatter = SimpleCov.formatter = SimpleCov::Formatter::Console
 SimpleCov.start
+
 require 'us_passport_tracker'
 
 RSpec.configure do |config|

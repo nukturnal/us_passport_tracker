@@ -1,3 +1,11 @@
+[![Gem Version](https://badge.fury.io/rb/us_passport_tracker.svg)](https://badge.fury.io/rb/us_passport_tracker)
+[![Code Climate](https://codeclimate.com/github/nukturnal/us_passport_tracker/badges/gpa.svg)](https://codeclimate.com/github/nukturnal/us_passport_tracker)
+[![Build Status](https://travis-ci.org/nukturnal/us_passport_tracker.svg?branch=master)](https://travis-ci.org/nukturnal/us_passport_tracker)
+[![Test Coverage](https://codeclimate.com/github/nukturnal/us_passport_tracker/badges/coverage.svg)](https://codeclimate.com/github/nukturnal/us_passport_tracker/coverage)
+[![Issue Count](https://codeclimate.com/github/nukturnal/us_passport_tracker/badges/issue_count.svg)](https://codeclimate.com/github/nukturnal/us_passport_tracker)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/31bd84ef1b424eb7a22d0fb783809dbf)](https://www.codacy.com/app/nukturnal/us_passport_tracker?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=nukturnal/us_passport_tracker&amp;utm_campaign=Badge_Grade)
+
+
 # USA VISA & Passport Tracker
 
 This is a simple CommandLine tool to check the status of your VISA & Passport collection after its been approved by the US Embassy/Consulate. This tool should work for all countries that have a USA Embassy/Consulate, remember to use the **ISO Alpha-2** Country Codes

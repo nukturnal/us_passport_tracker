@@ -34,6 +34,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
   spec.add_development_dependency 'simplecov', '~> 0.16'
+  spec.add_development_dependency 'simplecov-console', '~> 0.4'
 
   spec.add_runtime_dependency 'chromedriver-helper', '~> 1.2'
   spec.add_runtime_dependency 'selenium-webdriver', '~> 3.10'
