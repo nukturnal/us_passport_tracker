@@ -61,7 +61,7 @@ puts tracker.country_name
 ```
 
 ## Testing
-For privacy & security reasons your valid Passport ID & US Embassy Country you applied for VISA from are set in an environment variable **`USPT_VALID_PASSPORT_ID`** && **`USPT_VALID_COUNTRY_CODE`** respectively
+For privacy & security reasons your valid Passport ID & US Embassy Country you applied for VISA from are set in an environment variable **`USPT_VALID_PASSPORT_ID`** and **`USPT_VALID_COUNTRY_CODE`** respectively
 
 ## Development
 
