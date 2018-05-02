@@ -10,7 +10,7 @@
 
 This is a simple CommandLine tool to check the status of your VISA & Passport collection after its been approved by the US Embassy/Consulate. This tool should work for all countries that have a USA Embassy/Consulate, remember to use the **ISO Alpha-2** Country Codes
 
-![alt text](us_passport_tracker_commandline.gif)
+![Commandline Tool - uspasstracker](screenshot.png)
 
 ## Installation
 
