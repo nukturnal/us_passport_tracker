@@ -11,4 +11,14 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
+
+  config.before(:all) do
+    @valid_passport = ENV['USPT_VALID_PASSPORT_ID']
+    @valid_country_code = ENV['USPT_VALID_COUNTRY_CODE']
+
+    @valid_country_invalid_embassy = 'JP'
+    @invalid_passport = 'USPTRK001'
+
+    @track = USPassportTracker::Track
+  end
 end
