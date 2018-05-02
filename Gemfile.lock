@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    us_passport_tracker (1.0.0)
+    us_passport_tracker (1.1.1)
 
 GEM
   remote: https://rubygems.org/
@@ -39,13 +39,13 @@ GEM
     tty-color (0.4.2)
     tty-cursor (0.5.0)
     tty-font (0.2.0)
-    tty-prompt (0.16.0)
+    tty-prompt (0.16.1)
       necromancer (~> 0.4.0)
       pastel (~> 0.7.0)
       timers (~> 4.0)
       tty-cursor (~> 0.5.0)
-      tty-reader (~> 0.2.0)
-    tty-reader (0.2.0)
+      tty-reader (~> 0.3.0)
+    tty-reader (0.3.0)
       tty-cursor (~> 0.5.0)
       tty-screen (~> 0.6.4)
       wisper (~> 2.0.0)
