@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    us_passport_tracker (1.1.2)
-      chromedriver-helper
+    us_passport_tracker (1.2.1)
+      chromedriver-helper (~> 1.2)
       selenium-webdriver (~> 3.10)
       tty-font (~> 0.2)
       tty-prompt (~> 0.16)
